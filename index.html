@@ -190,7 +190,7 @@ under entropy-regularization.
     <div class="columns is-centered">
       <div class="column is-full">
         <div class="content">
-          <h2 class="title is-3">Experiment Results</h2>
+          <h2 class="title is-3">Experiment Results (Best-of-N)</h2>
           <center>
           <img src="static/images/prm-result.png" alt="Results of PRM and ORM" class="center-image blend-img-background"/>
           </center>
@@ -198,6 +198,28 @@ under entropy-regularization.
             <p>
                Best-of-N evaluation results on GSM8K and MATH500 datasets with Mistral-MetaMath-7b as the
 generator. The Hard-label PRM is the same setting as Math-Shepherd.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Experiment Results (RLHF)</h2>
+          <center>
+          <img src="static/images/prm-result.png" alt="Results of RLHF" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+               Zero-shot CoT evaluation for policy model
+Mistral-MetaMath-7b improved via Rejection Sam-
+pling Fine-tuning (RAFT).
             </p>
           </div>
         </div>
