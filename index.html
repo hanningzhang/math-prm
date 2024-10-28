@@ -236,6 +236,28 @@ under entropy-regularization.
             {\pi_0(a|x)e^{\eta r(a,x)}}
             \]
           </p>
+          <p>
+            Let \(a^{[l]} = [a^1,\dots,a^l]\),
+            be partial reasoning up to step \(l\), and \(a^{-[l]} = [a^{l+1},\dots,a^L]\)
+            be the completion of the partial reasoning from step \(l+1\). 
+            We define the intermediate reward by 
+            \(
+            e^{\eta r(a^{[l]},x)} = \mathbb{E}_{a^{-[l]}\sim\pi_0}e^{\eta r(a,x)}
+            \). Thus, we have:
+            \[
+              \pi_*(a^{-[l]}|x, a^{[l]}) = \frac{\pi_0(a^{-[l]}|x, a^{[l]})e^{\eta r(a,x)}}{\mathbb{E}_{a^{-[l]}\sim\pi_0(\cdot|x,a^{[l]})}e^{\eta r(a,x)}}
+            \]
+            And we obtain:
+            \[
+              \pi_*(a^{[l]}|x) 
+              =\frac{\pi_0(a^{[l]}|x)e^{\eta r(a^{[l]},x)}}{\mathbb{E}_{a^{[l]}\sim\pi_0}e^{\eta r(a^{[l]},x)}}
+            \]
+            \[
+              r(a^{[l]}, x) = 
+              \frac{1}{\eta} \ln
+              \mathbb{E}_{a^{-[l]}\sim\pi_0}e^{\eta r(a,x)}.
+            \]
+          </p>
         </div>
       </div>
     </div>
