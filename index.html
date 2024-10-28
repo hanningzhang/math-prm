@@ -162,7 +162,7 @@ These results highlight the efficacy of entropy-regularization in enhancing LLMs
 </section>
 <!-- End paper abstract -->
 
-
+  
 <section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -185,7 +185,27 @@ under entropy-regularization.
   </div>
 </section>
 
-<section class="section hero is-small is-light">
+<!-- Paper Introduction -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large language models (LLMs) have shown promise in performing complex multi-step reasoning, yet they continue to struggle with mathematical reasoning, often making systematic errors. A promising solution is reinforcement learning (RL) guided by reward models, particularly those focusing on process rewards, which score each intermediate step rather than solely evaluating the final outcome. This approach is more effective at guiding policy models towards correct reasoning trajectories. However, traditional process reward models diverge from typical RL practices and can limit model generalization. In this work, we propose an entropy-regularized process reward model (ER-PRM) that addresses these limitations by integrating KL-regularized Markov Decision Processes (MDP) to balance policy optimization with the need to prevent the policy from shifting too far from its initial distribution.  We derive a novel reward construction method and introduce an automatic labeling mechanism based on the theoretical results. 
+Our experiments on the MATH and GSM8K benchmarks demonstrate that ER-PRM consistently outperforms existing process reward models, achieving 1% improvement on GSM8K and 2-3% improvement on MATH under best-of-N evaluation. 
+These results highlight the efficacy of entropy-regularization in enhancing LLMs' reasoning capabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Paper Introduction -->
+
+  
+<section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
@@ -215,8 +235,13 @@ Mistral-MetaMath-7b improved via Rejection Sampling Fine-tuning (RAFT).
   </div>
 </section>
 
-
-
+<section class="section is-light" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+  We thank Wei Xiong for his contribution that helped improve this work.
+  </div>
+</section>
+  
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -231,13 +256,6 @@ Mistral-MetaMath-7b improved via Rejection Sampling Fine-tuning (RAFT).
     </div>
 </section>
 <!--End BibTex citation -->
-
-<section class="section" id="Acknowledgements">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Acknowledgements</h2>
-  We thank Wei Xiong for his contribution that helped improve this work.
-  </div>
-</section>
 
   <footer class="footer">
   <div class="container">
