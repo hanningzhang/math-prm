@@ -216,16 +216,26 @@ under entropy-regularization.
             derive the mathematical principles of the process reward construction, and propose practical algorithms. 
           </p>
           <p>
-    We consider training an LLM for reasoning. 
-Given prompt \(x\), the LLM produces $L$-step reasoning chain \(a = [a^1,\dots,a^L]\). 
-The reward \(r(a,x)\) indicates whether the result of the reasoning chain is correct or not. 
-We want to find LLM, denoted by a policy \(\pi_*(a|x)\), that optimizes \(\pi\in \Pi\) with the KL-regularized loss function
-    \[
-      \mathcal{L}(\pi) =  -\mathbb{E}_x\mathbb{E}_{a\sim\pi(\cdot|x)}
-    \big[r(a,x) - \frac{1}{\eta}\ln{\frac{\pi(a|x)}{\pi_0(a|x)}}\big]
-    \]
-    where \(\pi_0\) is the initial policy model, a pretrained LLM, and \(\pi\) is the model being fine-tuned.
-  </p>
+          We consider training an LLM for reasoning. 
+          Given prompt \(x\), the LLM produces \(L\)-step reasoning chain \(a = [a^1,\dots,a^L]\). 
+          The reward \(r(a,x)\) indicates whether the result of the reasoning chain is correct or not. 
+          We want to find LLM, denoted by a policy \(\pi_*(a|x)\), that optimizes \(\pi\in \Pi\) with the KL-regularized loss function:
+          \[
+            \mathcal{L}(\pi) =  -\mathbb{E}_x\mathbb{E}_{a\sim\pi(\cdot|x)}
+            \big[r(a,x) - \frac{1}{\eta}\ln{\frac{\pi(a|x)}{\pi_0(a|x)}}\big]
+          \]
+          where \(\pi_0\) is the initial policy model, a pretrained LLM, and \(\pi\) is the model being fine-tuned.
+          </p>
+          <p>
+            The minimizer for \(\mathcal{L}\) is:
+            \[
+            \pi_*(a|x) =
+            \frac{\pi_0(a|x)e^{\eta r(a,x)}}
+            {\mathbb{E}_{a\sim\pi_0}e^{\eta r(a,x)}}
+            \propto
+            {\pi_0(a|x)e^{\eta r(a,x)}}
+            \]
+          </p>
         </div>
       </div>
     </div>
