@@ -193,14 +193,24 @@ under entropy-regularization.
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
+            Complex mathematical reasoning for Large Language Models (LLMs) typically requires multiple steps of reasoning 
+            before producing the final answer. 
+            This introduces the Process Reward Model (PRM), which assigns a score to each step in the reasoning process, 
+            providing more fine-grained feedback.
+            It has been shown to outperform Outcome Reward Model (ORM) which only provides an overall score for the entire response.
+            To obtain the PRM training data, one prominent method is proposed by Math-Shepherd to automatically label the process reward
+            without human annotators.
+            The main idea of Math-Shepherd is to interpret the score of each step as its potential to deduce the correct final answer.
+            Then, we can sample multiple trajectories starting from the intermediate step, 
+            and use the number of correct trajectories as a proxy for this score.
+          </p>
+          <p>
             Despite the effectiveness, previous automatic labeling strategies consider a traditional Markov Decision Process (MDP), 
             which differs from the typical RL practice used with LLMs.
              Since the introduction of reinforcement learning from human feedback (RLHF),
               the standard approach has been using an entropy-regularized reward relative to a reference model.
             This also applies to RL in reasoning tasks where we formulate the problem as an entropy-regularized MDP.
-          </p>
-          <p>
-             in this project, we formulate the multi-step mathematical reasoning task under the entropy-regularized MDP framework,
+             In this project, we formulate the multi-step mathematical reasoning task under the entropy-regularized MDP framework,
             derive the mathematical principles of the process reward construction, and propose practical algorithms. 
           </p>
         </div>
