@@ -330,9 +330,36 @@ under entropy-regularization.
 generator. The Hard-label PRM is the same setting as Math-Shepherd.
             </p>
           </div>
-          <center>
+<!--           <center>
           <img src="static/images/rlhf-result.png" alt="Results of RLHF" class="center-image blend-img-background"/>
-          </center>
+          </center> -->
+          <table>
+            <tr>
+                <th>Mistral-MetaMath-7b</th>
+                <th>GSM8K</th>
+                <th>MATH</th>
+            </tr>
+            <tr>
+                <td>Baseline</td>
+                <td>77.9</td>
+                <td>28.6</td>
+            </tr>
+            <tr>
+                <td>+ Soft-label PRM</td>
+                <td>78.7</td>
+                <td>30.1</td>
+            </tr>
+            <tr>
+                <td>+ Hard-label PRM</td>
+                <td>79.0</td>
+                <td>32.0</td>
+            </tr>
+            <tr>
+                <td>+ ER-PRM (Ours)</td>
+                <td>79.5</td>
+                <td>32.8</td>
+            </tr>
+        </table>
           <div class="level-set has-text-justified">
             <p>
                Zero-shot CoT evaluation for policy model
